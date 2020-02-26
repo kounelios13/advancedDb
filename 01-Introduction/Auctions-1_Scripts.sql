@@ -7,10 +7,10 @@ WHERE YearOfDeath IS NULL;
 -- Να βρεθούν τα έργα τέχνης τα οποία ανήκουν στον τύπο έργων τέχνης που ονομάζεται 'oil on panel'
 -- (δηλαδή ουσιαστικά αναζητούνται τα έργα που είναι πίνακες ζωγραφικής με την τεχνική «λάδι σε πάνελ»)
 -- {τίτλος στήλης στην εκτύπωση: ΟνομασίαΈργου}.
-SELECT *
+SELECT ARTWORK.NAME
 FROM ARTWORK
-         inner join TYPEOFWORK on ARTWORK.TypeOfWork = TYPEOFWORK.TypeID
-WHERE TYPEOFWORK.Name = 'oil on panel';
+         INNER JOIN TYPEOFWORK ON ARTWORK.TYPEOFWORK = TYPEOFWORK.TYPEID
+WHERE TYPEOFWORK.NAME = 'oil on panel';
 
 -- Να βρεθούν οι καλλιτέχνες που έχουν δημιουργήσει έργα τέχνης τα οποία ανήκουν στον τύπο που
 -- ονομάζεται 'metal object' (δηλαδή έργα με μέταλλο) {τίτλος στήλης στην εκτύπωση: ΌνομαΚαλλιτέχνη}.
@@ -26,10 +26,9 @@ WHERE TYPEOFWORK.NAME = 'metal object';
 -- διατεταγμένα σε φθίνουσα διάταξη ως προς το συνολικό πλήθος έργων. Δεν χρειάζεται
 -- να σας απασχολήσει το ενδεχόμενο ύπαρξης καλλιτέχνη για τον οποίο μπορεί να μην έχει
 -- διατεθεί σε δημοπρασία κανένα έργο του.
--- select *
-SELECT ARTIST.ARTISTID, ARTIST.NAME, COUNT(ARTIST.NAME)
+SELECT ARTIST.ARTISTID, ARTIST.NAME, COUNT(DISTINCT ARTWORK.NAME) AS CNT
 FROM INCLUDED
          INNER JOIN ARTWORK ON INCLUDED.ARTWORKID = ARTWORK.ARTWORKID
          INNER JOIN ARTIST ON ARTWORK.CREATEDBY = ARTIST.ARTISTID
 GROUP BY ARTIST.NAME, ARTIST.ARTISTID
-ORDER BY COUNT(ARTIST.NAME) DESC;
+ORDER BY CNT DESC;
