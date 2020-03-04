@@ -14,7 +14,7 @@ WHERE TYPEOFWORK.NAME = 'oil on panel';
 
 -- Να βρεθούν οι καλλιτέχνες που έχουν δημιουργήσει έργα τέχνης τα οποία ανήκουν στον τύπο που
 -- ονομάζεται 'metal object' (δηλαδή έργα με μέταλλο) {τίτλος στήλης στην εκτύπωση: ΌνομαΚαλλιτέχνη}.
-SELECT ARTIST.NAME
+SELECT DISTINCT ARTIST.NAME
 FROM ARTIST
          INNER JOIN ARTWORK ON ARTIST.ARTISTID = ARTWORK.CREATEDBY
          INNER JOIN TYPEOFWORK ON ARTWORK.TYPEOFWORK = TYPEOFWORK.TYPEID

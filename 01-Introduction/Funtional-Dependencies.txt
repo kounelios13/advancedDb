@@ -1,0 +1,6 @@
+artistid -> name, nationality, yearofbirth, yearofdeath,shortcv,weblink
+artworkid -> name, description, yearofcreattion, photo, createdby, typeofwork
+auctionid -> name, overview, date, location, weblink, auctionhouse
+auctionhouseid -> name, address, weblink
+auctionid, artworkid -> valuedfrom, valuedto, soldfor
+typeid -> name, weblink
