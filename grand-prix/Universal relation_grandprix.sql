@@ -1,0 +1,18 @@
+﻿drop table results;
+
+create table RESULTS
+(
+    GRANDPRIXID      INTEGER,
+    GRANDPRIXNAME    varchar(60),
+    BASELINEPOSITION INTEGER,
+    CARNAME          TEXT,
+    PILOTID          INTEGER,
+    PILOTNAME        TEXT
+);
+
+INSERT INTO RESULTS VALUES (1, 'GRANDPRIX MONAKO', 56, 'MACLAREN', 123, 'N. LAUDA');
+INSERT INTO RESULTS VALUES (2, 'GRANDPRIX VIETMAN', 56, 'FERRARI', 124, 'N. LAUDA');
+
+select *
+from RESULTS;
+
