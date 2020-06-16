@@ -1,5 +1,5 @@
-INSERT INTO COLLECTOR
-VALUES ('marcelo97', 'marcelo', 'mollaj', 'Male', ROW ('L. Minoos 42', 'Herakleion', '71303'));
+INSERT INTO EXPERT
+VALUES ('marcelo97', 'marcelo', 'mollaj', 'Male', ROW ('L. Minoos 42', 'Herakleion', '71303'), ARRAY ['T02', 'T06']);
 
 INSERT INTO COLLECTOR
 VALUES ('mitsos13', 'dimitris', 'mimis', 'Male', ROW ('Andrea Kalvou 12', 'Syros', '84100'));

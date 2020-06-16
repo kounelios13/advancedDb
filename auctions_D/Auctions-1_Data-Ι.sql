@@ -270,3 +270,240 @@ INSERT INTO ARTWORK
 VALUES ('ΑW33', 'Kea', '87 cm by 100 cm., 34.25 in by 39.5 in.', 1976,
         'https://www.sothebys.com/en/auctions/ecatalogue/2011/the-greek-sale-l11100/lot.68.html', 'AR20', 'T01');
 
+/* Εισαγωγή δεδομένων στον πίνακα INCLUDED */
+INSERT INTO INCLUDED
+VALUES ('AU01', 'ΑW14', 70000, 100000, 217103);
+INSERT INTO INCLUDED
+VALUES ('AU01', 'ΑW22', 10000, 20000, 21035);
+INSERT INTO INCLUDED
+VALUES ('AU02', 'ΑW29', 100000, 180000, 191050);
+INSERT INTO INCLUDED
+VALUES ('AU03', 'ΑW07', 45000, 75000, 52952);
+INSERT INTO INCLUDED
+VALUES ('AU03', 'ΑW10', 120000, 180000, 951965);
+INSERT INTO INCLUDED
+VALUES ('AU03', 'ΑW13', 170000, 270000, 523640);
+INSERT INTO INCLUDED
+VALUES ('AU03', 'ΑW19', 14000, 22000, 17738);
+INSERT INTO INCLUDED
+VALUES ('AU03', 'ΑW21', 170000, 270000, 853121);
+INSERT INTO INCLUDED
+VALUES ('AU03', 'ΑW31', 150000, 220000, 457744);
+INSERT INTO INCLUDED
+VALUES ('AU04', 'ΑW03', 25000, 35000, NULL);
+INSERT INTO INCLUDED
+VALUES ('AU04', 'ΑW04', 85000, 110000, NULL);
+INSERT INTO INCLUDED
+VALUES ('AU04', 'ΑW09', 1800000, 2500000, 1975186);
+INSERT INTO INCLUDED
+VALUES ('AU04', 'ΑW12', 370000, 620000, 443397);
+INSERT INTO INCLUDED
+VALUES ('AU04', 'ΑW15', 180000, 250000, 222465);
+INSERT INTO INCLUDED
+VALUES ('AU04', 'ΑW16', 120000, 185000, 163550);
+INSERT INTO INCLUDED
+VALUES ('AU04', 'ΑW18', 25000, 40000, NULL);
+INSERT INTO INCLUDED
+VALUES ('AU04', 'ΑW22', 100000, 150000, 119364);
+INSERT INTO INCLUDED
+VALUES ('AU04', 'ΑW24', 75000, 100000, 89907);
+INSERT INTO INCLUDED
+VALUES ('AU05', 'ΑW05', 25000, 35000, 120771);
+INSERT INTO INCLUDED
+VALUES ('AU05', 'ΑW14', 120000, 180000, 183935);
+INSERT INTO INCLUDED
+VALUES ('AU05', 'ΑW20', 210000, 260000, 254117);
+INSERT INTO INCLUDED
+VALUES ('AU05', 'ΑW22', 35000, 60000, 43571);
+INSERT INTO INCLUDED
+VALUES ('AU05', 'ΑW26', 30000, 40000, NULL);
+INSERT INTO INCLUDED
+VALUES ('AU05', 'ΑW27', 180000, 200000, 520809);
+INSERT INTO INCLUDED
+VALUES ('AU05', 'ΑW29', 350000, 600000, 408517);
+INSERT INTO INCLUDED
+VALUES ('AU05', 'ΑW32', 35000, 60000, 43571);
+INSERT INTO INCLUDED
+VALUES ('AU06', 'ΑW08', 300000, 400000, NULL);
+INSERT INTO INCLUDED
+VALUES ('AU06', 'ΑW11', 90000, 140000, 219250);
+INSERT INTO INCLUDED
+VALUES ('AU06', 'ΑW17', 50000, 70000, 56012);
+INSERT INTO INCLUDED
+VALUES ('AU06', 'ΑW23', 9000, 14000, NULL);
+INSERT INTO INCLUDED
+VALUES ('AU06', 'ΑW25', 20000, 28000, 27011);
+INSERT INTO INCLUDED
+VALUES ('AU06', 'ΑW28', 90000, 140000, NULL);
+INSERT INTO INCLUDED
+VALUES ('AU06', 'ΑW30', 70000, 90000, 83307);
+INSERT INTO INCLUDED
+VALUES ('AU06', 'ΑW33', 50000, 70000, 56012);
+INSERT INTO INCLUDED
+VALUES ('AU07', 'ΑW01', 135000, 230000, 294890);
+INSERT INTO INCLUDED
+VALUES ('AU07', 'ΑW02', 70000, 110000, 136103);
+
+INSERT INTO COLLECTOR (nickname, firstname, lastname, sex, address)
+VALUES ('marcelo97', 'marcelo', 'mollaj', 'Male', ROW ('L. Minoos 42', 'Herakleion', '71303'));
+
+INSERT INTO COLLECTOR (nickname, firstname, lastname, sex, address)
+VALUES ('mitsos13', 'dimitris', 'mimis', 'Male', ROW ('Andrea Kalvou 12', 'Syros', '84100'));
+
+INSERT INTO COLLECTOR (nickname, firstname, lastname, sex, address)
+VALUES ('mariap', 'maria', 'papa', 'Female', ROW ('East Bay 211', 'San Francisco', '44352'));
+
+INSERT INTO COLLECTOR (nickname, firstname, lastname, sex, address)
+VALUES ('john', 'gianis', 'spaliaras', 'Male', ROW ('Petrou Ralli 12', 'Athina', '96000'));
+
+INSERT INTO expert (nickname, list_of_types)
+VALUES ('marcelo97', ARRAY ['T02', 'T06']);
+INSERT INTO expert (nickname, list_of_types)
+VALUES ('mitsos13', ARRAY ['T02', 'T06']);
+
+INSERT INTO novice (nickname, date_of_birth, typeid)
+VALUES ('mariap', '1997-05-17', ARRAY ['T03', 'T04']);
+INSERT INTO novice (nickname, date_of_birth, typeid)
+VALUES ('john', '1965-09-02', ARRAY ['T04', 'T05']);
+-- ----------------------------------------------------------------------------------
+-- INSERT INTO expert (nickname, firstname, lastname, sex, address, list_of_types)
+-- VALUES ('marcelo97', 'marcelo', 'mollaj', 'Male', ROW ('L. Minoos 42', 'Herakleion', '71303'), ARRAY ['T02', 'T06']);
+-- INSERT INTO expert (nickname, firstname, lastname, sex, address, list_of_types)
+-- VALUES ('mitsos13', 'dimitris', 'mimis', 'Male', ROW ('Andrea Kalvou 12', 'Syros', '84100'), ARRAY ['T02', 'T06']);
+--
+-- INSERT INTO novice (nickname, firstname, lastname, sex, address, date_of_birth, typeid)
+-- VALUES ('mariap', 'maria', 'papa', 'Female', ROW ('East Bay 211', 'San Francisco', '44352'), '1997-05-17',
+--         ARRAY ['T03', 'T04']);
+-- INSERT INTO novice (nickname, firstname, lastname, sex, address, date_of_birth, typeid)
+-- VALUES ('john', 'gianis', 'spaliaras', 'Male', ROW ('Petrou Ralli 12', 'Athina', '96000'), '1965-09-02',
+--         ARRAY ['T04', 'T05']);
+
+insert into interest
+values ('marcelo97', 'AU01');
+insert into interest
+values ('marcelo97', 'AU02');
+insert into interest
+values ('marcelo97', 'AU05');
+insert into interest
+values ('marcelo97', 'AU06');
+
+insert into interest
+values ('mitsos13', 'AU01');
+insert into interest
+values ('mitsos13', 'AU03');
+insert into interest
+values ('mitsos13', 'AU05');
+insert into interest
+values ('mitsos13', 'AU07');
+
+insert into interest
+values ('mariap', 'AU02');
+insert into interest
+values ('mariap', 'AU04');
+insert into interest
+values ('mariap', 'AU06');
+insert into interest
+values ('mariap', 'AU03');
+
+insert into interest
+values ('john', 'AU01');
+insert into interest
+values ('john', 'AU02');
+insert into interest
+values ('john', 'AU03');
+insert into interest
+values ('john', 'AU04');
+
+insert into posts values (1001, 'marcelo97', 'AU04', ROW ('marcelo97','this art is amazing', NOW(),ARRAY ['ΑW04']));
+insert into posts values (1002, 'marcelo97', 'AU06', ROW ('marcelo97','worth a million dollars', NOW(),ARRAY ['ΑW06','ΑW08']));
+
+insert into posts values (1003, 'mitsos13', 'AU07', ROW ('mitsos13','wanna buy some of this', NOW(),ARRAY ['ΑW01','ΑW05','AW22']));
+insert into posts values (1004, 'mitsos13', 'AU05', ROW ('mariap','will fit in your collection', NOW(),ARRAY ['ΑW05','ΑW08']));
+
+insert into posts values (1005, 'mariap', 'AU04', ROW ('mitsos13','do you need this?', NOW(),ARRAY ['ΑW09','ΑW08']));
+insert into posts values (1006, 'mariap', 'AU03', ROW ('mariap','I love this one <3 <3', NOW(),ARRAY ['ΑW10']));
+
+insert into posts values (1007, 'john', 'AU01', ROW ('mitsos13','you won`t boy nothing he he he', NOW(),ARRAY ['ΑW14','ΑW22', 'AW08']));
+insert into posts values (1008, 'john', 'AU04', ROW ('mariap','you won`t boy nothing  he he he', NOW(),ARRAY ['ΑW03','ΑW04','ΑW09','ΑW12']));
+insert into posts values (1009, 'john', 'AU03', ROW ('marcelo97','you won`t boy nothing he he he', NOW(),ARRAY ['ΑW07','ΑW10','ΑW13','ΑW19']));
+insert into posts values (1010, 'john', 'AU07', ROW ('john','this are mine', NOW(),ARRAY ['ΑW01','ΑW02', 'AW08']));
+
+--------------------------------- INSERT TO PREPERTY GRAPH ---------------------------------
+-- INSERT INTO FOLLOWS VALUES ('marcelo97', 'mitsos13');
+-- INSERT INTO FOLLOWS VALUES ('marcelo97', 'mariap');
+-- INSERT INTO FOLLOWS VALUES ('john', 'marcelo97');
+-- INSERT INTO FOLLOWS VALUES ('mitsos13', 'marcelo97');
+-- INSERT INTO FOLLOWS VALUES ('mitsos13', 'mariap');
+-- INSERT INTO FOLLOWS VALUES ('mariap', 'mitsos13');
+-- INSERT INTO FOLLOWS VALUES ('mariap', 'john');
+--
+-- INSERT INTO ARTWORKINTEREST VALUES('marcelo97', ARRAY ['AW04','AW06','AW08']);
+-- INSERT INTO ARTWORKINTEREST VALUES('mitsos13', ARRAY ['AW01','AW05','AW08','AW22']);
+-- INSERT INTO ARTWORKINTEREST VALUES('mariap', ARRAY ['AW08','AW09','AW10']);
+-- INSERT INTO ARTWORKINTEREST VALUES('john', ARRAY ['AW02','AW08','AW09','AW10','AW12','AW13','AW14','AW19','AW22']);
+--
+-- INSERT INTO POSTED VALUES ('marcelo97',1001, 'AU04', 'marcelo97','this art is amazing', NOW());
+-- INSERT INTO POSTED VALUES ('marcelo97',1002, 'AU06','marcelo97','worth a million dollars', NOW());
+-- INSERT INTO POSTED VALUES ('mitsos13',1003, 'AU07','mitsos13','wanna buy some of this', NOW());
+-- INSERT INTO POSTED VALUES ('mitsos13',1004, 'AU05','mariap','will fit in your collection', NOW());
+-- INSERT INTO POSTED VALUES ('mariap', 1005, 'AU04','mitsos13','do you need this?', NOW());
+-- INSERT INTO POSTED VALUES ('mariap', 1006, 'AU03','mariap','I love this one <3 <3', NOW());
+-- INSERT INTO POSTED VALUES ('john', 1007, 'AU01', 'mitsos13','you won`t boy nothing he he he', NOW());
+-- INSERT INTO POSTED VALUES ('john', 1008, 'AU04','mariap','you won`t boy nothing  he he he', NOW());
+-- INSERT INTO POSTED VALUES ('john', 1009, 'AU03', 'marcelo97','you won`t boy nothing he he he', NOW());
+-- INSERT INTO POSTED VALUES ('john', 1010, 'AU07', 'john','this are mine', NOW());
+
+------------------------------------------------ Graph abstraction inserts -------------------------------------------------
+INSERT INTO POSTED VALUES (1001, 'post', 'marcelo97', 'AU04', 'marcelo97','this art is amazing', NOW());
+INSERT INTO POSTED VALUES (1002, 'post', 'marcelo97', 'AU06','marcelo97','worth a million dollars', NOW());
+INSERT INTO POSTED VALUES (1003, 'post', 'mitsos13', 'AU07','mitsos13','wanna buy some of this', NOW());
+INSERT INTO POSTED VALUES (1004, 'post', 'mitsos13', 'AU05','mariap','will fit in your collection', NOW());
+INSERT INTO POSTED VALUES (1005, 'post', 'mariap',  'AU04','mitsos13','do you need this?', NOW());
+INSERT INTO POSTED VALUES (1006, 'post', 'mariap', 'AU03','mariap','I love this one <3 <3', NOW());
+INSERT INTO POSTED VALUES (1007, 'post', 'john', 'AU01', 'mitsos13','you won`t boy nothing he he he', NOW());
+INSERT INTO POSTED VALUES (1008, 'post', 'john', 'AU04','mariap','you won`t boy nothing  he he he', NOW());
+INSERT INTO POSTED VALUES (1009, 'post', 'john', 'AU03', 'marcelo97','you won`t boy nothing he he he', NOW());
+INSERT INTO POSTED VALUES (1010, 'post', 'john', 'AU07', 'john','this are mine', NOW());
+
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('marcelo97', 'mitsos13','follows');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('marcelo97', 'mariap','follows');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('john', 'marcelo97','follows');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('mitsos13', 'marcelo97','follows');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('mitsos13', 'mariap','follows');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('mariap', 'mitsos13','follows');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('mariap', 'john','follows');
+
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('marcelo97', '1001','posted');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('marcelo97', '1002','posted');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('mitsos13', '1003','posted');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('mitsos13', '1004','posted');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('mariap', '1005','posted');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('mariap', '1006','posted');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('john', '1007','posted');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('john', '1008','posted');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('john', '1009','posted');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('john', '1010','posted');
+
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('marcelo97', 'AW04','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('marcelo97', 'AW06','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('marcelo97', 'AW08','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('mitsos13', 'AW01','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('mitsos13', 'AW05','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('mitsos13', 'AW08','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('mariap', 'AW08','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('mariap', 'AW09','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('mariap', 'AW10','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('john', 'AW02','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('john', 'AW08','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('john', 'AW09','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('john', 'AW10','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('john', 'AW12','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('john', 'AW13','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('john', 'AW14','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('john', 'AW19','interest');
+INSERT INTO NORMALIZEDPROPERTYLINK VALUES ('john', 'AW22','interest');
+
+INSERT INTO UNNORMALIZEDPROPERTYLINK VALUES ('marcelo97', ARRAY ['AW04','AW06','AW08'],'interest');
+INSERT INTO UNNORMALIZEDPROPERTYLINK VALUES ('mitsos13', ARRAY ['AW01','AW05','AW08','AW22'],'interest');
+INSERT INTO UNNORMALIZEDPROPERTYLINK VALUES ('mariap', ARRAY ['AW08','AW09','AW10'],'interest');
+INSERT INTO UNNORMALIZEDPROPERTYLINK VALUES ('john', ARRAY ['AW02','AW08','AW09','AW10','AW12','AW13','AW14','AW19','AW22'],'interest');

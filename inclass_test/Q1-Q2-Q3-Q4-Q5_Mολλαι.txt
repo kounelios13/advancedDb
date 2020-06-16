@@ -1,0 +1,34 @@
+-- Q1: Ποιοι είναι οι επόμενοι του papadakis στη διαδρομή FOLLOWS;
+select FOLLOWS.out_Going
+from FOLLOWS
+where komvos = 'papadakis';
+
+-- Q2: Ποιοι είναι οι επόμενοι του papadakis στη διαδρομή KNOWS;
+select KNOWS.ONOMAXRHSTH2
+from KNOWS
+where ONOMAXRHSTH1 = 'papadakis';
+
+-- Q3: Βρες για το χρήστη demosthenes ποίος είναι ο δεύτερος επόμενος στη διαδρομή FOLLOWS
+select unnest(FOLLOWS.out_Going)
+from FOLLOWS
+where FOLLOWS.komvos = any (
+    select unnest(FOLLOWS.out_Going)/
+    from FOLLOWS
+    where FOLLOWS.komvos = 'demosthenes');
+
+-- Q4: Υπολογίστε αυτούς που είτε γνωρίζει ο vellis είτε γνωρίζουν τον vellis (undirected graph ενός χρήστη)
+select KNOWS.ONOMAXRHSTH2 as onoma
+from KNOWS
+where KNOWS.ONOMAXRHSTH1 = 'vellis'/
+union
+select KNOWS.ONOMAXRHSTH1 as onoma
+from KNOWS
+where KNOWS.ONOMAXRHSTH2 = 'vellis';
+
+-- Νέο Q5: Σε ππιο ερώτημα απαντάει το query
+-- SELECT p1.ONOMA, p1.EPONYMO
+-- FROM USERS p1
+--          JOIN KNOWS ON KNOWS.ONOMAXRHSTH2 = p1.ONOMAXEIRISTH
+--          JOIN USERS p2 ON KNOWS.ONOMAXRHSTH1 = p2.ONOMAXEIRISTH
+-- WHERE p2.ONOMAXEIRISTH = 'feretzakis';
+Απαντάει στο ερώτημα ποιούς ξέρει ο 'feretzakis'

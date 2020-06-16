@@ -1,0 +1,17 @@
+-- Q1: Βρείτε τους χρήστες που αναρτούν σχόλια στο ‘b01’;
+SELECT PROPERTYLINK.NODEKEY1
+FROM PROPERTYLINK
+WHERE PROPERTYLINK.NODEKEY2='b01' AND PROPERTYLINK.PROPERTYLABEL='UPLOADS';
+
+-- Q2: Βρείτε τους χρήστες που κάνουν tag σχόλια που έχουν αναρτηθεί στο ‘b01’;
+SELECT PROPERTYLINK.NODEKEY1
+FROM PROPERTYLINK
+WHERE PROPERTYLINK.NODEKEY2='b01' AND PROPERTYLINK.PROPERTYLABEL='TAGS';
+
+-- Q3: Βρείτε τους χρήστες που είτε αναρτούν σχόλια στο ‘b01’ είτε κάνουν tag σχόλια του ‘b01’;
+SELECT PROPERTYLINK.NODEKEY1
+FROM PROPERTYLINK
+WHERE PROPERTYLINK.NODEKEY2='b01' AND PROPERTYLINK.PROPERTYLABEL='TAGS'
+OR PROPERTYLINK.NODEKEY2='b01' AND PROPERTYLINK.PROPERTYLABEL='UPLOADS';
+
+-- Q4: Ποιές διαδρομές (δηλαδή ακολουθία κόμβων) συνδέουν τους κόμβους 'u01' και 'b01'?

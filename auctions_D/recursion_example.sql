@@ -1,0 +1,46 @@
+DROP TABLE IF EXISTS EMPLOYEES;
+CREATE TABLE EMPLOYEES
+(
+    EMPLOYEE_ID SERIAL PRIMARY KEY,
+    FULL_NAME   VARCHAR NOT NULL,
+    MANAGER_ID  INT
+);
+INSERT INTO EMPLOYEES (EMPLOYEE_ID,
+                       FULL_NAME,
+                       MANAGER_ID)
+VALUES (1, 'MICHAEL NORTH', NULL),
+       (2, 'MEGAN BERRY', 1),
+       (3, 'SARAH BERRY', 1),
+       (4, 'ZOE BLACK', 1),
+       (5, 'TIM JAMES', 1),
+       (6, 'BELLA TUCKER', 2),
+       (7, 'RYAN METCALFE', 2),
+       (8, 'MAX MILLS', 2),
+       (9, 'BENJAMIN GLOVER', 2),
+       (10, 'CAROLYN HENDERSON', 3),
+       (11, 'NICOLA KELLY', 3),
+       (12, 'ALEXANDRA CLIMO', 3),
+       (13, 'DOMINIC KING', 3),
+       (14, 'LEONARD GRAY', 4),
+       (15, 'ERIC RAMPLING', 4),
+       (16, 'PIERS PAIGE', 7),
+       (17, 'RYAN HENDERSON', 7),
+       (18, 'FRANK TUCKER', 8),
+       (19, 'NATHAN FERGUSON', 8),
+       (20, 'KEVIN RAMPLING', 8);
+
+WITH RECURSIVE SUBORDINATES AS (
+    SELECT EMPLOYEE_ID,
+           MANAGER_ID,
+           FULL_NAME
+    FROM EMPLOYEES
+    WHERE EMPLOYEE_ID = 2
+    UNION
+    SELECT E.EMPLOYEE_ID,
+           E.MANAGER_ID,
+           E.FULL_NAME
+    FROM EMPLOYEES E
+             INNER JOIN SUBORDINATES S ON S.EMPLOYEE_ID = E.MANAGER_ID
+)
+SELECT *
+FROM SUBORDINATES;
